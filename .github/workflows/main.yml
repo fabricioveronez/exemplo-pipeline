@@ -1,1 +1,15 @@
+name: primeira-pipeline
+on:
+    push: 
+        branches: ["main"]
+    workflow_dispatch: 
 
+jobs:
+    primeiro-job:
+        name: "Meu primeiro Job"
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Minha primeira ação"
+              run: echo "Hello World !!!"
+            - name: "Você criou a sua primeira pipeline"
+              run: "Você executou a primeira pipeline !!!"
