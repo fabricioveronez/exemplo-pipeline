@@ -12,4 +12,4 @@ jobs:
             - name: "Minha primeira ação"
               run: echo "Hello World !!!"
             - name: "Você criou a sua primeira pipeline"
-              run: "Você executou a primeira pipeline !!!"
+              run: echo "Você executou a primeira pipeline !!!"
