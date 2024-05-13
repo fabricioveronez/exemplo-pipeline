@@ -13,3 +13,8 @@ jobs:
               run: echo "Hello World !!!"
             - name: "Você criou a sua primeira pipeline"
               run: echo "Você executou a primeira pipeline !!!"
+            - name: "Script Python"
+              run: |
+                  variavel = "Hello World !!!!"
+                  print(variavel)
+              shell: python
