@@ -18,3 +18,15 @@ jobs:
                   variavel = "Hello World !!!!"
                   print(variavel)
               shell: python
+    instalacao-nodejs:
+      name: "Instalação do Ambiente NodeJS"
+      runs-on: ubuntu-latest
+      steps:
+          - name: "Verificando a versão atual"
+            run: node --version
+          - name: "Definindo a versão do NodeJS para 20.12"
+            uses: actions/setup-node@v4
+            with:
+              node-version: 20.12.0
+          - name: "Verificando a versão atual novamente"
+            run: node --version
