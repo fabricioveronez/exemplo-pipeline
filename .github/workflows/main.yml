@@ -19,6 +19,7 @@ jobs:
                   print(variavel)
               shell: python
     instalacao-nodejs:
+      needs: [primeiro-job]
       name: "Instalação do Ambiente NodeJS"
       runs-on: ubuntu-latest
       steps:
