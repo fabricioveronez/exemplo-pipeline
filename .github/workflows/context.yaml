@@ -1,0 +1,25 @@
+name: Como usar o contexto do GitHub Actions
+
+on: 
+    push:
+        branches: [main]
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contexto github
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Contexto job
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Contexto steps
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Contexto runner
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
