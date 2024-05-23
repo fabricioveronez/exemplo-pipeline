@@ -53,7 +53,7 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-    - name: Contexto vars
+    - name: Contexto secrets
       env:
         SECRETS_CONTEXT: ${{ toJson(secrets) }}
       run: echo "$SECRETS_CONTEXT"
