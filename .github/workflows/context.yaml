@@ -1,11 +1,28 @@
-name: Como usar o contexto do GitHub Actions
+name: Como usar variavel de ambiente e contexto do GitHub Actions
 
 on: 
     push:
         branches: [main]
+env:
+  ENV_WORKFLOW: "Valor WORKFLOW"
+
 jobs:
-  one:
+  enviroment:
     runs-on: ubuntu-latest
+    env:
+        ENV_JOB: "Valor JOB"
+    steps:
+      - name: Variáveis de Ambiente
+        env:
+          ENV_ACTIONS: "Valor ACTIONS"
+        run: | 
+          echo "$ENV_WORKFLOW" 
+          echo "$ENV_JOB"
+          echo "$ENV_ACTIONS"
+  contextos:
+    runs-on: ubuntu-latest
+    env:
+        ENV_JOB: "Valor JOB"
     steps:
       - name: Contexto github
         env:

@@ -1,33 +1,33 @@
-name: primeira-pipeline
-on:
-    push: 
-        branches: ["main"]
-    workflow_dispatch: 
+# name: primeira-pipeline
+# on:
+#     push: 
+#         branches: ["main"]
+#     workflow_dispatch: 
 
-jobs:
-    primeiro-job:
-        name: "Meu primeiro Job"
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Minha primeira ação"
-              run: echo "Hello World !!!"
-            - name: "Você criou a sua primeira pipeline"
-              run: echo "Você executou a primeira pipeline !!!"
-            - name: "Script Python"
-              run: |
-                  variavel = "Hello World !!!!"
-                  print(variavel)
-              shell: python
-    instalacao-nodejs:
-      needs: [primeiro-job]
-      name: "Instalação do Ambiente NodeJS"
-      runs-on: ubuntu-latest
-      steps:
-          - name: "Verificando a versão atual"
-            run: node --version
-          - name: "Definindo a versão do NodeJS para 20.12"
-            uses: actions/setup-node@v4
-            with:
-              node-version: 20.12.0
-          - name: "Verificando a versão atual novamente"
-            run: node --version
+# jobs:
+#     primeiro-job:
+#         name: "Meu primeiro Job"
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: "Minha primeira ação"
+#               run: echo "Hello World !!!"
+#             - name: "Você criou a sua primeira pipeline"
+#               run: echo "Você executou a primeira pipeline !!!"
+#             - name: "Script Python"
+#               run: |
+#                   variavel = "Hello World !!!!"
+#                   print(variavel)
+#               shell: python
+#     instalacao-nodejs:
+#       needs: [primeiro-job]
+#       name: "Instalação do Ambiente NodeJS"
+#       runs-on: ubuntu-latest
+#       steps:
+#           - name: "Verificando a versão atual"
+#             run: node --version
+#           - name: "Definindo a versão do NodeJS para 20.12"
+#             uses: actions/setup-node@v4
+#             with:
+#               node-version: 20.12.0
+#           - name: "Verificando a versão atual novamente"
+#             run: node --version
