@@ -42,3 +42,17 @@ jobs:
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
+  variables:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Contexto vars
+      env:
+        VARS_CONTEXT: ${{ toJson(vars) }}
+      run: echo "$VARS_CONTEXT"
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Contexto vars
+      env:
+        SECRETS_CONTEXT: ${{ toJson(secrets) }}
+      run: echo "$SECRETS_CONTEXT"
